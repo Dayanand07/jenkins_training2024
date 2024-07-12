@@ -6,9 +6,6 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|
 RUN yum install httpd -y
 
 RUN yum install net-tools -y
-
-
-RUN echo "hello" > /var/www/html/index.html
-
+COPY index.html /var/www/html/index.html
 
 CMD httpd -DFOREGROUND
